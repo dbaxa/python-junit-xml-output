@@ -20,5 +20,5 @@ class TestJunitXml(unittest.TestCase):
 		self.assertEqual(junit.total_failures, 3)
 		junit.dump()
 
-if __name__=="__main_":
-	main()
+if __name__ == "__main__":
+	unittest.main()
