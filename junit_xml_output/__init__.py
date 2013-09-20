@@ -14,27 +14,30 @@ class JunitXml(object):
 		self.testsuit_name = testsuit_name
 		self.test_cases = test_cases
 		self.failing_test_cases = self._get_failing_test_cases()
-
 		self.total_tests = total_tests
 		self.total_failures = total_failures
-
 		if total_tests is None:
 			self.total_tests = len(self.test_cases)
 		if total_failures is None:
 			self.total_failures = len(self.failing_test_cases)
-
-		self.root = ET.Element("testsuite", {'name' : str(self.testsuit_name),
-			"failures": str(self.total_failures), "tests" : str(self.total_tests)})
+		self.root = ET.Element("testsuite",
+			{
+				"name" : unicode(self.testsuit_name),
+				"failures": unicode(self.total_failures),
+				"tests" : unicode(self.total_tests)
+			}
+		)
 		self.build_junit_xml()
 
 	def _get_failing_test_cases(self):
-		return set([case for case in self.test_cases if case.is_failure()])
+		return set([case for case in self.test_cases if
+			case.is_failure()])
 
 	def build_junit_xml(self):
 		""" create the xml tree from the given testsuite name and testcase """
 		for case in self.test_cases:
 			test_case_element = ET.SubElement(self.root,
-				"testcase", {'name' : str(case.name)})
+				"testcase", {"name" : unicode(case.name)})
 			if case.is_failure():
 				failure_element = ET.Element("failure")
 				failure_element.text = case.contents
@@ -59,5 +62,5 @@ class TestCase(object):
 		self.test_type = test_type
 
 	def is_failure(self):
-		""" returns true if this test case is a 'failure' type """
+		""" returns True if this test case is a 'failure' type """
 		return self.test_type == "failure"
