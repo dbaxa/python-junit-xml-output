@@ -14,5 +14,6 @@ setup(name='junit_xml_output',
 	long_description=read('README.md'),
 	license = "MIT",
 	version = __import__('junit_xml_output').__version__,
+	test_suite = 'junit_xml_output.test',
 )
 
