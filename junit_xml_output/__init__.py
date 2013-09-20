@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 import xml.dom.minidom
 
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 class JunitXml(object):
 	""" A class which is designed to create a junit test xml file.
