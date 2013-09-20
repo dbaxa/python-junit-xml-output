@@ -61,17 +61,3 @@ class TestCase(object):
 	def is_failure(self):
 		""" returns true if this test case is a 'failure' type """
 		return self.test_type == "failure"
-
-def main():
-	""" a short example of how to use this module """
-	test_cases = []
-	for i in range(0, 5):
-		type_c = ""
-		if i % 2 == 0:
-			type_c = "failure"
-		test_cases.append(TestCase(i, str(i) + "contents", type_c) )
-	junit_xml = JunitXml("demo test example", test_cases)
-	print junit_xml.dump()
-
-if __name__=="__main__":
-	main()
