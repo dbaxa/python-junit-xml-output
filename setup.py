@@ -13,6 +13,6 @@ setup(name='junit_xml_output',
 	description=read('README.md'),
 	long_description=read('README.md'),
 	license = "MIT",
-	version = "0.0.1"
-	)
+	version = __import__('junit_xml_output').__version__,
+)
 
