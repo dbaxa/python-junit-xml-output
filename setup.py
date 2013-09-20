@@ -12,6 +12,7 @@ setup(name='junit_xml_output',
 	packages=find_packages(),
 	description=read('README.md'),
 	long_description=read('README.md'),
+	license = "MIT",
 	version = "0.0.1"
 	)
 
