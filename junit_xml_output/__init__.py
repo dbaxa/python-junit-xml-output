@@ -2,8 +2,8 @@
 import xml.etree.ElementTree as ET
 import xml.dom.minidom
 
-
 __version__ = "0.0.2"
+
 
 class JunitXml(object):
 	""" A class which is designed to create a junit test xml file.
@@ -34,7 +34,9 @@ class JunitXml(object):
 			case.is_failure()])
 
 	def build_junit_xml(self):
-		""" create the xml tree from the given testsuite name and testcase """
+		""" create the xml tree from the given testsuite name and
+		    testcase
+		"""
 		for case in self.test_cases:
 			test_case_element = ET.SubElement(self.root,
 				"testcase", {"name" : unicode(case.name)})
@@ -50,6 +52,7 @@ class JunitXml(object):
 			dom = xml.dom.minidom.parseString(out)
 			out = dom.toprettyxml()
 		return out
+
 
 class TestCase(object):
 	""" A junit test case representation class.

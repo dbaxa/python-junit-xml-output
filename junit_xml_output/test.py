@@ -18,7 +18,8 @@ class TestJunitXml(unittest.TestCase):
 		junit = JunitXml("demo test example", test_cases)
 		self.assertEqual(junit.total_tests, 5)
 		self.assertEqual(junit.total_failures, 3)
-		junit.dump()
+		self.assertTrue(junit.dump())
+
 
 if __name__ == "__main__":
 	unittest.main()
