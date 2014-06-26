@@ -6,7 +6,7 @@ import os
 def read(fname):
 	return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-setup(name='junit_xml_output',
+setup(name='junit-xml-output',
 	author = 'David Black',
 	author_email = 'dblack@atlassian.com',
 	url = 'https://bitbucket.org/db_atlass/python-junit-xml-output-module',
