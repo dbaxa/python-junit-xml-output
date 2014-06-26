@@ -16,6 +16,7 @@ setup(name='junit-xml-output',
 	license = "MIT",
 	version = __import__('junit_xml_output').__version__,
 	test_suite = 'junit_xml_output.test',
+	platforms=['any'],
 	classifiers = [
 		'Development Status :: 4 - Beta',
 		'Environment :: Console',
