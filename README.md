@@ -1,5 +1,8 @@
 Create junit test xml output from python!
 
+[![Build Status](https://travis-ci.org/dbaxa/python-junit-xml-output.svg?branch=master)](https://travis-ci.org/dbaxa/python-junit-xml-output)
+
+
 ## Example Usage
 
     import junit_xml_output
