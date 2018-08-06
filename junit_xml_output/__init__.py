@@ -62,9 +62,11 @@ class TestCase(object):
         the junit test xml tree
     """
 
-    def __init__(self, name, contents, test_type=""):
+    def __init__(self, name, contents, test_type=None):
         self.name = name
         self.contents = contents
+        if test_type is None:
+            test_type = ""
         self.test_type = test_type
 
     def is_failure(self):
