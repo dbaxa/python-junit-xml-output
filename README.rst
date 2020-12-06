@@ -1,6 +1,9 @@
-Create junit test xml output from python!
+*Create junit test xml output from python!*
 
-## Example Usage
+Example Usage
+~~~~~~~~~~~~~
+
+.. code:: python
 
     import junit_xml_output
     test_cases = []
